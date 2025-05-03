@@ -1,5 +1,4 @@
 import { Canvas } from "@react-three/fiber";
-import "./App.css";
 import Experience from "./components/Experience";
 import { ContactShadows, OrbitControls } from "@react-three/drei";
 
