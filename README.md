@@ -2,6 +2,37 @@
 
 Practicing R3F, HTML and having some fun
 
+## Done
+
+- [x] set up project
+- [x] import all the models
+- [x] add starter values
+- [x] Deploy project
+
+## TODO:
+
+- [ ] Position Models
+- [ ] Fix Lighting
+- [ ] Fix Camera
+- [ ] Add shadows
+- [ ] Add texture
+- [ ] Add controller to characters
+- [ ] Add HTML to all Objects on click
+- [ ] Add outline from Drei to clickable objects
+- [ ] Add HTML to object and character intersect
+- [ ] Add background
+- [ ] Add events
+- [ ] Add animations
+- [ ] Add zustand
+- [ ] Add sound options
+- [ ] Add sound tracks
+- [ ] Add noise shader to box
+- [ ] Add wind feel
+- [ ] Fix performances
+- [ ] Optimize for mobile
+- [ ] Fix Readme
+- [ ] Get feedback
+
 ### Credits
 
 Model Links
