@@ -1,11 +1,28 @@
 import { Canvas } from "@react-three/fiber";
 import Experience from "./components/Experience";
 import { ContactShadows, OrbitControls } from "@react-three/drei";
+import { Leva, useControls } from "leva";
 
 export function App() {
+	const { cameraPositionX, cameraPositionY, cameraPositionZ, cameraFov } =
+		useControls(
+			"camera",
+			{
+				cameraPositionX: { value: 0, min: -10, max: 10, step: 0.01 },
+				cameraPositionY: { value: 2, min: -10, max: 10, step: 0.01 },
+				cameraPositionZ: { value: 12, min: -10, max: 10, step: 0.01 },
+				cameraFov: { value: 75, min: 0, max: 100, step: 0.1 },
+			},
+			{ collapsed: true }
+		);
 	return (
 		<>
-			<Canvas shadows camera={{ position: [0, 2, 12], fov: 42 }}>
+			<Canvas
+				shadows
+				camera={{
+					position: [cameraPositionX, cameraPositionY, cameraPositionZ],
+					fov: cameraFov,
+				}}>
 				<ambientLight intensity={1.5} />
 				<OrbitControls />
 				<group>
@@ -13,6 +30,7 @@ export function App() {
 					<Experience />
 				</group>
 			</Canvas>
+			<Leva collapsed />
 		</>
 	);
 }
