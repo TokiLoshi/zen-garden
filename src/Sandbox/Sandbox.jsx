@@ -7,146 +7,148 @@ import { RockMedTwo } from "../components/sandbox/RockMedTwo";
 
 export default function Sandbox() {
 	const {
-		cratePositionX,
-		cratePositionY,
-		cratePositionZ,
-		crateRotationX,
-		crateRotationY,
-		crateRotationZ,
+		cratePx,
+		cratePy,
+		cratePz,
+		crateRx,
+		crateRy,
+		crateRz,
+		crateScaleX,
+		crateScaleY,
+		crateScaleZ,
 	} = useControls(
 		"crate",
 		{
-			cratePositionX: { value: 0, min: -10, max: 10, step: 0.01 },
-			cratePositionY: { value: 0, min: -10, max: 10, step: 0.01 },
-			cratePositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
-			crateRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
-			crotatRotationY: { value: 0, min: -10, max: 10, step: 0.01 },
-			crateRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
+			cratePx: { value: 2.5, min: -10, max: 10, step: 0.01 },
+			cratePy: { value: 0, min: -10, max: 10, step: 0.01 },
+			cratePz: { value: 4, min: -10, max: 10, step: 0.01 },
+			crateRx: { value: 0, min: -10, max: 10, step: 0.01 },
+			crateRy: { value: 0.25, min: -10, max: 10, step: 0.01 },
+			crateRz: { value: 0, min: -10, max: 10, step: 0.01 },
+			crateScaleX: { value: 3, min: 0.001, max: 10, step: 0.01 },
+			crateScaleY: { value: 1, min: 0.001, max: 10, step: 0.01 },
+			crateScaleZ: { value: 3.25, min: 0.001, max: 10, step: 0.01 },
 		},
 		{
 			collapsed: true,
 		}
 	);
-	const {
-		rakePositionX,
-		rakePositionY,
-		rakePositionZ,
-		rakeRotationX,
-		rakeRotationY,
-		rakeRotationZ,
-	} = useControls(
-		"rake",
+	const { rakePx, rakePy, rakePz, rakeRx, rakeRy, rakeRz, rakeScale } =
+		useControls(
+			"rake",
 
-		{
-			rakePositionX: { value: 0, min: -10, max: 10, step: 0.01 },
-			rakePositionY: { value: 0, min: -10, max: 10, step: 0.01 },
-			rakePositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
-			rakeRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
-			rakeRotationY: { value: 0, min: -10, max: 10, step: 0.01 },
-			rakeRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
-		},
-		{
-			collapsed: true,
-		}
-	);
+			{
+				rakePx: { value: -5.5, min: -10, max: 10, step: 0.01 },
+				rakePy: { value: 0.3, min: -10, max: 10, step: 0.01 },
+				rakePz: { value: -1.9, min: -10, max: 10, step: 0.01 },
+				rakeRx: { value: 1.7, min: -10, max: 10, step: 0.01 },
+				rakeRy: { value: 0, min: -10, max: 10, step: 0.01 },
+				rakeRz: { value: 0.5, min: -10, max: 10, step: 0.01 },
+				rakeScaleX: { value: 1, min: 0.01, max: 10, step: 0.01 },
+				rakeScaleY: { value: 1, min: 0.01, max: 10, step: 0.01 },
+				rakeScaleZ: { value: 1, min: 0.01, max: 10, step: 0.01 },
+				rakeScale: { value: 5, min: 0.01, max: 10, step: 0.01 },
+			},
+			{
+				collapsed: true,
+			}
+		);
+	const { rockMedPx, rockMedPy, rockMedPz, rockMedRx, rockMedRy, rockMedRz } =
+		useControls(
+			"rockMed",
+			{
+				rockMedPx: { value: 8, min: -10, max: 10, step: 0.01 },
+				rockMedPy: { value: 0, min: -10, max: 10, step: 0.01 },
+				rockMedPz: { value: -3, min: -10, max: 10, step: 0.01 },
+				rockMedRx: { value: 0, min: -10, max: 10, step: 0.01 },
+				rockMedRy: { value: 0.4, min: -10, max: 10, step: 0.01 },
+				rockMedRz: { value: 0, min: -10, max: 10, step: 0.01 },
+			},
+			{ collapsed: true }
+		);
 	const {
-		rockMedPositionX,
-		rockMedPositionY,
-		rockMedPositionZ,
-		rockMedRotationX,
-		rockMedRotationY,
-		rockMedRotationZ,
-	} = useControls(
-		"rockMed",
-		{
-			rockMedPositionX: { value: 0, min: -10, max: 10, step: 0.01 },
-			rockMedPositionY: { value: 0, min: -10, max: 10, step: 0.01 },
-			rockMedPositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
-			rockMedRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
-			rockMedRotationY: { value: 0, min: -10, max: 10, step: 0.01 },
-			rockMedRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
-		},
-		{ collapsed: true }
-	);
-	const {
-		rockMedOnePositionX,
-		rockMedOnePositionY,
-		rockMedOnePositionZ,
-		rockMedOneRotationX,
-		rockMedOneRotationY,
-		rockMedOneRotationZ,
+		rockMed1Px,
+		rockMed1Py,
+		rockMed1Pz,
+		rockMed1Rx,
+		rockMed1Ry,
+		rockMed1Rz,
 	} = useControls(
 		"rockMedOne",
 		{
-			rockMedOnePositionX: { value: 0, min: -10, max: 10, step: 0.01 },
-			rockMedOnePositionY: { value: 0, min: -10, max: 10, step: 0.01 },
-			rockMedOnePositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
-			rockMedOneRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
-			rockMedOneRotationY: { value: 0, min: -10, max: 10, step: 0.01 },
-			rockMedOneRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
+			rockMed1Px: { value: -6, min: -10, max: 10, step: 0.01 },
+			rockMed1Py: { value: 0, min: -10, max: 10, step: 0.01 },
+			rockMed1Pz: { value: 2, min: -10, max: 10, step: 0.01 },
+			rockMed1Rx: { value: 0, min: -10, max: 10, step: 0.01 },
+			rockMed1Ry: { value: 0, min: -10, max: 10, step: 0.01 },
+			rockMed1Rz: { value: 0, min: -10, max: 10, step: 0.01 },
 		},
 		{ collapsed: true }
 	);
 	const {
-		rockMedTwoPositionX,
-		rockMedTwoPositionY,
-		rockMedTwoPositionZ,
-		rockMedTwoRotationX,
-		rockMedTwoRotationY,
-		rockMedTwoRotationZ,
+		rockMed2Px,
+		rockMed2Py,
+		rockMed2Pz,
+		rockMed2Rx,
+		rockMed2Ry,
+		rockMed2Rz,
 	} = useControls(
 		"rockMedTwo",
 		{
-			rockMedTwoPositionX: { value: 0, min: -10, max: 10, step: 0.01 },
-			rockMedTwoPositionY: { value: 0, min: -10, max: 10, step: 0.01 },
-			rockMedTwoPositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
-			rockMedTwoRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
-			rockMedTwoRotationY: { value: 0, min: -10, max: 10, step: 0.01 },
-			rockMedTwoRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
+			rockMed2Px: { value: 0, min: -10, max: 10, step: 0.01 },
+			rockMed2Py: { value: 0, min: -10, max: 10, step: 0.01 },
+			rockMed2Pz: { value: 0, min: -10, max: 10, step: 0.01 },
+			rockMed2Rx: { value: 0, min: -10, max: 10, step: 0.01 },
+			rockMed2Ry: { value: 0, min: -10, max: 10, step: 0.01 },
+			rockMed2Rz: { value: 0, min: -10, max: 10, step: 0.01 },
 		},
 		{ collapsed: true }
 	);
 	return (
 		<>
 			<Crate
-				position-x={cratePositionX}
-				position-y={cratePositionY}
-				position-z={cratePositionZ}
-				rotation-x={crateRotationX}
-				rotation-y={crateRotationY}
-				rotation-z={crateRotationZ}
+				position-x={cratePx}
+				position-y={cratePy}
+				position-z={cratePz}
+				rotation-x={crateRx}
+				rotation-y={crateRy}
+				rotation-z={crateRz}
+				scale-x={crateScaleX}
+				scale-y={crateScaleY}
+				scale-z={crateScaleZ}
 			/>
 			<Rake
-				position-x={rakePositionX}
-				position-y={rakePositionY}
-				position-z={rakePositionZ}
-				rotation-x={rakeRotationX}
-				rotation-y={rakeRotationY}
-				rotation-z={rakeRotationZ}
+				position-x={rakePx}
+				position-y={rakePy}
+				position-z={rakePz}
+				rotation-x={rakeRx}
+				rotation-y={rakeRy}
+				rotation-z={rakeRz}
+				scale={rakeScale}
 			/>
 			<RockMed
-				position-x={rockMedPositionX}
-				position-y={rockMedPositionY}
-				position-z={rockMedPositionZ}
-				rotation-x={rockMedRotationX}
-				rotation-y={rockMedRotationY}
-				rotation-z={rockMedRotationZ}
+				position-x={rockMedPx}
+				position-y={rockMedPy}
+				position-z={rockMedPz}
+				rotation-x={rockMedRx}
+				rotation-y={rockMedRy}
+				rotation-z={rockMedRz}
 			/>
 			<RockMedOne
-				position-x={rockMedOnePositionX}
-				position-y={rockMedOnePositionY}
-				position-z={rockMedOnePositionZ}
-				rotation-x={rockMedOneRotationX}
-				rotation-y={rockMedOneRotationY}
-				rotation-z={rockMedOneRotationZ}
+				position-x={rockMed1Px}
+				position-y={rockMed1Py}
+				position-z={rockMed1Pz}
+				rotation-x={rockMed1Rx}
+				rotation-y={rockMed1Ry}
+				rotation-z={rockMed1Rz}
 			/>
 			<RockMedTwo
-				position-x={rockMedTwoPositionX}
-				position-y={rockMedTwoPositionY}
-				position-z={rockMedTwoPositionZ}
-				rotation-x={rockMedTwoRotationX}
-				rotation-y={rockMedTwoRotationY}
-				rotation-z={rockMedTwoRotationZ}
+				position-x={rockMed2Px}
+				position-y={rockMed2Py}
+				position-z={rockMed2Pz}
+				rotation-x={rockMed2Rx}
+				rotation-y={rockMed2Ry}
+				rotation-z={rockMed2Rz}
 			/>
 		</>
 	);

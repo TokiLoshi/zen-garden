@@ -23,6 +23,7 @@ Practicing R3F, HTML and having some fun
 - [ ] Add background
 - [ ] Add events
 - [ ] Add animations
+- [ ] Add favicon
 - [ ] Add zustand
 - [ ] Add sound options
 - [ ] Add sound tracks

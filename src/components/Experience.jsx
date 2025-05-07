@@ -30,9 +30,9 @@ export default function Experience() {
 				fadeDistance={50}
 				fadeStrength={5}
 			/>
-			{/* <Sandbox /> */}
+			<Sandbox />
 			{/* <Plants /> */}
-			<Creatures />
+			{/* <Creatures /> */}
 		</>
 	);
 }

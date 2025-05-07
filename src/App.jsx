@@ -9,8 +9,8 @@ export function App() {
 			"camera",
 			{
 				cameraPositionX: { value: 0, min: -10, max: 10, step: 0.01 },
-				cameraPositionY: { value: 2, min: -10, max: 10, step: 0.01 },
-				cameraPositionZ: { value: 12, min: -10, max: 10, step: 0.01 },
+				cameraPositionY: { value: 20, min: -10, max: 10, step: 0.01 },
+				cameraPositionZ: { value: 25, min: -10, max: 10, step: 0.01 },
 				cameraFov: { value: 75, min: 0, max: 100, step: 0.1 },
 			},
 			{ collapsed: true }
