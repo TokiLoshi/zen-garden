@@ -1,19 +1,6 @@
-// import { Crate } from "./sandbox/Crate";
-// import { Rake } from "./sandbox/Rake";
-// import { RockMed } from "./sandbox/RockMed";
-// import { RockMedOne } from "./sandbox/RockMedOne";
-// import { RockMedTwo } from "./sandbox/RockMedTwo";
-// import { Bee } from "./creatures/Bee";
-// import { Panda } from "./creatures/Panda";
-// import { Clover } from "./plants/Clover";
-// import { Fern } from "./plants/Fern";
-// import { Flowers } from "./plants/Flowers";
-// import { Mushrooms } from "./plants/Mushrooms";
-// import { Pine } from "./plants/Pine";
-// import { useControls } from "leva";
 import { Grid } from "@react-three/drei";
 import Sandbox from "../Sandbox/Sandbox";
-// import Plants from "../Plants/Plants";
+import Plants from "../Plants/Plants";
 import Creatures from "../Creatures/Creatures";
 
 export default function Experience() {
@@ -31,8 +18,8 @@ export default function Experience() {
 				fadeStrength={5}
 			/>
 			<Sandbox />
-			{/* <Plants /> */}
-			{/* <Creatures /> */}
+			<Plants />
+			<Creatures />
 		</>
 	);
 }

@@ -10,14 +10,20 @@ export default function Creatures() {
 		pandaRotationX,
 		pandaRotationY,
 		pandaRotationZ,
-	} = useControls("panda", {
-		pandaPositionX: { value: 0, min: -10, max: 10, step: 0.01 },
-		pandaPositionY: { value: 0, min: -10, max: 10, step: 0.01 },
-		pandaPositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
-		pandaRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
-		pandaRotationY: { value: 0, min: -10, max: 10, step: 0.01 },
-		pandaRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
-	});
+		pandaScale,
+	} = useControls(
+		"panda",
+		{
+			pandaPositionX: { value: 4, min: -10, max: 10, step: 0.01 },
+			pandaPositionY: { value: 0, min: -10, max: 10, step: 0.01 },
+			pandaPositionZ: { value: -2, min: -10, max: 10, step: 0.01 },
+			pandaRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
+			pandaRotationY: { value: -0.3, min: -10, max: 10, step: 0.01 },
+			pandaRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
+			pandaScale: { value: 1.0, min: 0.1, max: 10, step: 0.1 },
+		},
+		{ collapsed: true }
+	);
 	const {
 		beePositionX,
 		beePositionY,
@@ -25,14 +31,20 @@ export default function Creatures() {
 		beeRotationX,
 		beeRotationY,
 		beeRotationZ,
-	} = useControls("bee", {
-		beePositionX: { value: 0, min: -10, max: 10, step: 0.01 },
-		beePositionY: { value: 0, min: -10, max: 10, step: 0.01 },
-		beePositionZ: { value: 0, min: -10, max: 10, step: 0.01 },
-		beeRotationX: { value: 0, min: -10, max: 10, step: 0.01 },
-		beeRotationY: { value: 0, min: -10, max: 10, step: 0.01 },
-		beeRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
-	});
+		beeScale,
+	} = useControls(
+		"bee",
+		{
+			beePositionX: { value: -1.5, min: -10, max: 10, step: 0.01 },
+			beePositionY: { value: 2.0, min: -10, max: 10, step: 0.01 },
+			beePositionZ: { value: 4.0, min: -10, max: 10, step: 0.01 },
+			beeRotationX: { value: 0.0, min: -10, max: 10, step: 0.01 },
+			beeRotationY: { value: 0, min: -10, max: 10, step: 0.01 },
+			beeRotationZ: { value: 0, min: -10, max: 10, step: 0.01 },
+			beeScale: { value: 1, min: 0.01, max: 10, step: 0.01 },
+		},
+		{ collapsed: true }
+	);
 	return (
 		<>
 			<Panda
@@ -42,6 +54,7 @@ export default function Creatures() {
 				rotation-x={pandaRotationX}
 				rotation-y={pandaRotationY}
 				rotation-z={pandaRotationZ}
+				scale={pandaScale}
 			/>
 			<Bee
 				position-x={beePositionX}
@@ -50,6 +63,7 @@ export default function Creatures() {
 				rotation-x={beeRotationX}
 				rotation-y={beeRotationY}
 				rotation-z={beeRotationZ}
+				scale={beeScale}
 			/>
 		</>
 	);

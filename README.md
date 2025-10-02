@@ -11,7 +11,7 @@ Practicing R3F, HTML and having some fun
 
 ## TODO:
 
-- [ ] Position Models
+- [x] Position Models
 - [ ] Fix Lighting
 - [ ] Fix Camera
 - [ ] Add shadows

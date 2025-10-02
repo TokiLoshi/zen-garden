@@ -38,34 +38,42 @@ export default function Sandbox() {
 			"rake",
 
 			{
-				rakePx: { value: -5.5, min: -10, max: 10, step: 0.01 },
+				rakePx: { value: -3, min: -10, max: 10, step: 0.01 },
 				rakePy: { value: 0.3, min: -10, max: 10, step: 0.01 },
 				rakePz: { value: -1.9, min: -10, max: 10, step: 0.01 },
 				rakeRx: { value: 1.7, min: -10, max: 10, step: 0.01 },
-				rakeRy: { value: 0, min: -10, max: 10, step: 0.01 },
-				rakeRz: { value: 0.5, min: -10, max: 10, step: 0.01 },
+				rakeRy: { value: 1.36, min: -10, max: 10, step: 0.01 },
+				rakeRz: { value: 1.49, min: -10, max: 10, step: 0.01 },
 				rakeScaleX: { value: 1, min: 0.01, max: 10, step: 0.01 },
 				rakeScaleY: { value: 1, min: 0.01, max: 10, step: 0.01 },
 				rakeScaleZ: { value: 1, min: 0.01, max: 10, step: 0.01 },
-				rakeScale: { value: 5, min: 0.01, max: 10, step: 0.01 },
+				rakeScale: { value: 7, min: 0.01, max: 10, step: 0.01 },
 			},
 			{
 				collapsed: true,
 			}
 		);
-	const { rockMedPx, rockMedPy, rockMedPz, rockMedRx, rockMedRy, rockMedRz } =
-		useControls(
-			"rockMed",
-			{
-				rockMedPx: { value: 8, min: -10, max: 10, step: 0.01 },
-				rockMedPy: { value: 0, min: -10, max: 10, step: 0.01 },
-				rockMedPz: { value: -3, min: -10, max: 10, step: 0.01 },
-				rockMedRx: { value: 0, min: -10, max: 10, step: 0.01 },
-				rockMedRy: { value: 0.4, min: -10, max: 10, step: 0.01 },
-				rockMedRz: { value: 0, min: -10, max: 10, step: 0.01 },
-			},
-			{ collapsed: true }
-		);
+	const {
+		rockMedPx,
+		rockMedPy,
+		rockMedPz,
+		rockMedRx,
+		rockMedRy,
+		rockMedRz,
+		rockMedScale,
+	} = useControls(
+		"rockMed",
+		{
+			rockMedPx: { value: 10, min: -10, max: 10, step: 0.01 },
+			rockMedPy: { value: 0, min: -10, max: 10, step: 0.01 },
+			rockMedPz: { value: -3, min: -10, max: 10, step: 0.01 },
+			rockMedRx: { value: 0, min: -10, max: 10, step: 0.01 },
+			rockMedRy: { value: 0.4, min: -10, max: 10, step: 0.01 },
+			rockMedRz: { value: 0, min: -10, max: 10, step: 0.01 },
+			rockMedScale: { value: 1, min: 0.1, max: 10, step: 0.1 },
+		},
+		{ collapsed: true }
+	);
 	const {
 		rockMed1Px,
 		rockMed1Py,
@@ -73,6 +81,7 @@ export default function Sandbox() {
 		rockMed1Rx,
 		rockMed1Ry,
 		rockMed1Rz,
+		rockMed1Scale,
 	} = useControls(
 		"rockMedOne",
 		{
@@ -82,6 +91,7 @@ export default function Sandbox() {
 			rockMed1Rx: { value: 0, min: -10, max: 10, step: 0.01 },
 			rockMed1Ry: { value: 0, min: -10, max: 10, step: 0.01 },
 			rockMed1Rz: { value: 0, min: -10, max: 10, step: 0.01 },
+			rockMed1Scale: { value: 1.3, min: 0.1, max: 5 },
 		},
 		{ collapsed: true }
 	);
@@ -92,15 +102,17 @@ export default function Sandbox() {
 		rockMed2Rx,
 		rockMed2Ry,
 		rockMed2Rz,
+		rockMed2Scale,
 	} = useControls(
 		"rockMedTwo",
 		{
 			rockMed2Px: { value: 0, min: -10, max: 10, step: 0.01 },
 			rockMed2Py: { value: 0, min: -10, max: 10, step: 0.01 },
-			rockMed2Pz: { value: 0, min: -10, max: 10, step: 0.01 },
+			rockMed2Pz: { value: -3, min: -10, max: 10, step: 0.01 },
 			rockMed2Rx: { value: 0, min: -10, max: 10, step: 0.01 },
 			rockMed2Ry: { value: 0, min: -10, max: 10, step: 0.01 },
 			rockMed2Rz: { value: 0, min: -10, max: 10, step: 0.01 },
+			rockMed2Scale: { value: 1, min: 0.1, max: 10 },
 		},
 		{ collapsed: true }
 	);
@@ -133,6 +145,7 @@ export default function Sandbox() {
 				rotation-x={rockMedRx}
 				rotation-y={rockMedRy}
 				rotation-z={rockMedRz}
+				scale={rockMedScale}
 			/>
 			<RockMedOne
 				position-x={rockMed1Px}
@@ -141,6 +154,7 @@ export default function Sandbox() {
 				rotation-x={rockMed1Rx}
 				rotation-y={rockMed1Ry}
 				rotation-z={rockMed1Rz}
+				scale={rockMed1Scale}
 			/>
 			<RockMedTwo
 				position-x={rockMed2Px}
@@ -149,6 +163,7 @@ export default function Sandbox() {
 				rotation-x={rockMed2Rx}
 				rotation-y={rockMed2Ry}
 				rotation-z={rockMed2Rz}
+				scale={rockMed2Scale}
 			/>
 		</>
 	);
